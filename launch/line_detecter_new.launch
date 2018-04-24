@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!--param name="/use_sim_time" value="false"/>
+  
+	<node pkg="urg_node" type="urg_node" name="front_laser_node" output="screen">
+		<param name="ip_address" value="192.168.1.11" type="string" />
+	</node>
+	
+	<node pkg="urg_node" type="urg_node" name="back_laser_node" output="screen">
+		<param name="ip_address" value="192.168.1.11" type="string" />
+		<remap from="scan" to="back_scan" />
+	</node>	
+	
+	<node pkg="final_project" type="broadcaster_imu" name="tf_node" output="screen" />
+
+  <node pkg="laser_scan_matcher" type="laser_scan_matcher_node"
+    name="laser_scan_matcher_node" output="screen">
+    <param name="use_imu" value="false" />
+    <param name="base_frame" value="base_link"/>
+    <param name="fixed_frame" value="odom" />
+    <param name="publish_tf" value="true" />
+    <param name="max_iterations" value="10"/>
+  </node-->
+  
+  <param name="front_scan_topic" value="scan" />
+  <param name="back_scan_topic" value="back_scan" />
+	<param name="pos_topic" value="pose2D" />
+	<param name="base_frame_id" value="base_link" />
+	<param name="num_lane" value="4" />
+	<param name="left_lane" value="1" />
+	<param name="right_lane" value="3" />
+	<param name="car_length" value="0.1" />
+  <node pkg="line_detecter" type="run_detect" name="line_detecter_node" output="screen">
+    <!--param name="scan_topic" value="scan2" />
+		<param name="pos_topic" value="pose2D" />
+		<param name="base_frame_id" value="base_link" />
+    <param name="num_lane" value="3" /-->
+  </node>
+
+</launch>

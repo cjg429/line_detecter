@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+  <param name="scan_topic" value="scan" />
+	<param name="pos_topic" value="pose2D" />
+	<param name="base_frame_id" value="base_link" />
+	<param name="num_lane" value="4" />
+	<param name="left_lane" value="1" />
+	<param name="right_lane" value="3" />
+	<param name="car_length" value="0.1" />
+  <node pkg="line_detecter" type="run_detect"
+    name="line_detecter_node" output="screen">
+    <!--param name="scan_topic" value="scan2" />
+		<param name="pos_topic" value="pose2D" />
+		<param name="base_frame_id" value="base_link" />
+    <param name="num_lane" value="3" /-->
+  </node>
+
+</launch>
